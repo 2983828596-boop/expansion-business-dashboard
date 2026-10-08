@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="拓展部2021—2026年业务数据对比与月度趋势看板" />
+  <meta name="description" content="拓展部2025—2026年业务数据对比、月度趋势与青靓业务净利润看板" />
   <title>拓展部业务数据对比看板</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230bb3a7'/%3E%3Cpath d='M14 45V30h8v15zm14 0V19h8v26zm14 0V11h8v34z' fill='white'/%3E%3C/svg%3E" />
   <style>
@@ -60,7 +60,7 @@
     .target-wrap{min-height:340px;display:flex;align-items:center;padding:0 8%}
     .target-row{width:100%;display:flex;align-items:center;gap:16px}
     .target-progress{width:100%;height:42px;background:#d9dfe3;border-radius:999px;overflow:hidden;box-shadow:inset 0 2px 8px rgba(57,78,86,.12)}
-    .target-progress span{display:flex;align-items:center;justify-content:flex-end;width:63.5%;height:100%;padding-right:14px;background:linear-gradient(90deg,#0aa89f,#24c6b8);border-radius:inherit;box-shadow:0 4px 18px rgba(14,181,170,.28);color:#fff;font-weight:900;font-size:15px}
+    .target-progress span{display:flex;align-items:center;justify-content:flex-end;width:64%;height:100%;padding-right:14px;background:linear-gradient(90deg,#0aa89f,#24c6b8);border-radius:inherit;box-shadow:0 4px 18px rgba(14,181,170,.28);color:#fff;font-weight:900;font-size:15px}
     .target-total{flex:0 0 auto;color:var(--ink);font-size:16px;font-weight:900;white-space:nowrap}
     .footer{margin-top:24px;padding:20px;color:var(--teal-dark);font-size:18px;font-weight:900;text-align:center;letter-spacing:.08em}
     @media(max-width:1100px){.kpis{grid-template-columns:repeat(3,1fr)}.card{grid-column:span 12}}
@@ -77,40 +77,46 @@
     </header>
 
     <nav class="nav" aria-label="图表导航">
-      <a href="#trend">月度趋势</a><a href="#year">年度对比</a><a href="#monthbar">月份柱状</a><a href="#cumulative">累计趋势</a><a href="#delta">月度增减</a><a href="#target">目标进度</a><a href="#heat">业务热力</a>
+      <a href="#trend">月度趋势</a><a href="#year">年度对比</a><a href="#qingliang">青靓利润</a><a href="#monthbar">月份柱状</a><a href="#cumulative">累计趋势</a><a href="#delta">月度增减</a><a href="#target">目标进度</a><a href="#heat">业务热力</a>
     </nav>
 
     <section class="kpis" aria-label="核心指标">
-      <article class="kpi" style="--wash:#eef2f7"><div class="label">2021—2023 合计</div><div class="value">219.4<span class="unit">万元</span></div><div class="note">源表汇总口径</div></article>
-      <article class="kpi" style="--wash:#eaf2ff"><div class="label">2024 表内金额</div><div class="value">589.7<span class="unit">万元</span></div><div class="note">较前三年合计 +168.8%</div></article>
-      <article class="kpi" style="--wash:#e6f8f6"><div class="label">2025 表内金额</div><div class="value">1,159.4<span class="unit">万元</span></div><div class="note">较2024年 +96.6%</div></article>
-      <article class="kpi" style="--wash:#dff8f4"><div class="label">2026 年度累计</div><div class="value">952.3<span class="unit">万元</span></div><div class="note">截至2026年8月</div></article>
+      <article class="kpi" style="--wash:#eef2f7"><div class="label">2025 年度金额</div><div class="value">1,159.4<span class="unit">万元</span></div><div class="note">全年结算金额</div></article>
+      <article class="kpi" style="--wash:#dff8f4"><div class="label">2026 年度累计</div><div class="value">959.8<span class="unit">万元</span></div><div class="note">截至8月，已含青靓业务</div></article>
+      <article class="kpi" style="--wash:#eaf2ff"><div class="label">2026 / 2025</div><div class="value">82.8<span class="unit">%</span></div><div class="note">当前累计占2025全年</div></article>
+      <article class="kpi" style="--wash:#e6f8f6"><div class="label">青靓业务净利润</div><div class="value">7.47<span class="unit">万元</span></div><div class="note">6—8月，共1,562套</div></article>
     </section>
 
     <section class="grid" id="dashboard">
       <article class="card wide" id="trend" data-chart-card>
-        <div class="card-head"><div><h2>月度结算金额趋势</h2><p class="desc">2025年与2026年逐月对比，鼠标悬停可查看数值。</p></div></div>
+        <div class="card-head"><div><h2>2025 / 2026 月度金额趋势</h2><p class="desc">2026年6—8月已计入青靓业务净利润。</p></div></div>
         <div class="pills"><button class="pill active" data-series="2025">2025</button><button class="pill active" data-series="2026">2026</button></div>
         <div class="chart" id="trendChart"></div>
         <div class="legend"><span><i class="dot" style="--c:#9aa4b2"></i>2025</span><span><i class="dot" style="--c:#0eb5aa"></i>2026 YTD</span></div>
       </article>
 
       <article class="card" id="year" data-chart-card>
-        <div class="card-head"><div><h2>年度结算金额对比</h2><p class="desc">2021—2023为三年合计，2026为截至8月累计。</p></div></div>
+        <div class="card-head"><div><h2>年度金额对比</h2><p class="desc">2025全年与2026截至8月累计。</p></div></div>
         <div class="chart" id="yearChart"></div>
-        <div class="insight"><span class="mark"></span><span>2026年截至8月已达到2025表内金额的 <b>82.1%</b>。</span></div>
+        <div class="insight"><span class="mark"></span><span>2026年截至8月已达到2025全年金额的 <b>82.8%</b>。</span></div>
       </article>
 
-      <article class="card" id="monthbar" data-chart-card>
-        <div class="card-head"><div><h2>各月份三年对比</h2><p class="desc">并列柱状图突出同月差异，空白表示源表无结算记录。</p></div></div>
+      <article class="card" id="qingliang" data-chart-card>
+        <div class="card-head"><div><h2>青靓业务净利润</h2><p class="desc">标价－每套50元－表内服务费。</p></div></div>
+        <div class="chart" id="qingliangChart"></div>
+        <div class="insight"><span class="mark"></span><span>6月 <b>1,125套</b>｜7月 <b>223套</b>｜8月 <b>214套</b>；净利润合计 <b>7.47万元</b>。</span></div>
+      </article>
+
+      <article class="card wide" id="monthbar" data-chart-card>
+        <div class="card-head"><div><h2>各月份两年对比</h2><p class="desc">并列柱状图对比2025与2026同月金额。</p></div></div>
         <div class="chart" id="monthBarChart"></div>
-        <div class="legend"><span><i class="dot" style="--c:#537ec5"></i>2024</span><span><i class="dot" style="--c:#9aa4b2"></i>2025</span><span><i class="dot" style="--c:#0eb5aa"></i>2026</span></div>
+        <div class="legend"><span><i class="dot" style="--c:#9aa4b2"></i>2025</span><span><i class="dot" style="--c:#0eb5aa"></i>2026</span></div>
       </article>
 
       <article class="card wide" id="cumulative" data-chart-card>
-        <div class="card-head"><div><h2>年度累计进度曲线</h2><p class="desc">按月累计结算金额，直观看出每个年份业务释放节奏。</p></div></div>
+        <div class="card-head"><div><h2>年度累计进度曲线</h2><p class="desc">按月累计，直观看出2025与2026业务释放节奏。</p></div></div>
         <div class="chart" id="cumulativeChart"></div>
-        <div class="legend"><span><i class="dot" style="--c:#537ec5"></i>2024累计</span><span><i class="dot" style="--c:#9aa4b2"></i>2025累计</span><span><i class="dot" style="--c:#0eb5aa"></i>2026累计</span></div>
+        <div class="legend"><span><i class="dot" style="--c:#9aa4b2"></i>2025累计</span><span><i class="dot" style="--c:#0eb5aa"></i>2026累计</span></div>
       </article>
 
       <article class="card" id="delta" data-chart-card>
@@ -120,7 +126,7 @@
 
       <article class="card" id="target" data-chart-card>
         <div class="card-head"><div><h2>2026年度目标完成进度</h2></div></div>
-        <div class="target-wrap"><div class="target-row"><div class="target-progress" id="targetProgress" role="progressbar" aria-label="2026年度目标完成进度" aria-valuemin="0" aria-valuemax="1500" aria-valuenow="952.3"><span>63.5%</span></div><strong class="target-total">1500万</strong></div></div>
+        <div class="target-wrap"><div class="target-row"><div class="target-progress" id="targetProgress" role="progressbar" aria-label="2026年度目标完成进度" aria-valuemin="0" aria-valuemax="1500" aria-valuenow="959.8"><span>64.0%</span></div><strong class="target-total">1500万</strong></div></div>
       </article>
 
       <article class="card wide" id="heat" data-chart-card>
@@ -134,16 +140,10 @@
   <script>
     const months=['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
     const monthly={
-      '2024':[117.29655,0,132.08915,5.4,6,0,0,111.6401,174.7769,42.5414,0,0],
       '2025':[165.3981,257.595023,0,226.84,197.8462,4.878,306.8251,0,0,0,0,0],
-      '2026':[13.543095,376.2303,4.5,258.9646,225.924,0,6.372215,66.7964,null,null,null,null]
+      '2026':[13.543095,376.2303,4.5,258.9646,225.924,5.31695,7.454765,67.8678,null,null,null,null]
     };
-    const category=[
-      ['面膜及组合',520.4121,886.280223,894.1513],['护肤品',42.5414,136.3482,38.264],['防晒',0,106.038,0],['医疗器械',11.4,4.878,12.92331],['医用敷料/喷剂',15.3906,0,6.992],['套组/其他',0,21.038,0],['凝胶',0,4.8,0]
-    ];
-    const entities=[
-      ['ctpertty黑膜',520.4121,886.280223,0],['KEKE MEET',0,0,732.0513],['ctpertty修复乳',42.5414,136.3482,0],['李大麦',0,0,166.6],['ctpertty芬生源防晒',0,106.038,0],['芳雅熹',0,0,33.764],['干眼理疗仪',11.4,4.878,12.92331],['镭健',0,21.038,0],['静川贻贝粘蛋白',15.3906,0,0],['静川',0,0,6.992],['幸福部落',0,4.8,0]
-    ];
+    const qingliangProfit=[5.31695,1.08255,1.0714];
     const C={blue:'#537ec5',gray:'#9aa4b2',teal:'#0eb5aa',tealDark:'#009da0',orange:'#f5a85b',red:'#e36a6a',grid:'#e6ecef',ink:'#314b66',muted:'#718498'};
     const fmt=v=>v==null?'—':Number(v).toLocaleString('zh-CN',{maximumFractionDigits:1});
     const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -166,25 +166,18 @@
       const w=620,h=340,p={l:52,r:18,t:32,b:58};const maxY=opt.max||niceMax(Math.max(...sets.flatMap(s=>s.values)));const plotW=w-p.l-p.r,group=plotW/labels.length,bw=Math.min(36,group/(sets.length+1));let s=axes(w,h,p,maxY,5);
       labels.forEach((lab,i)=>{const cx=p.l+group*(i+.5);s+=`<text x="${cx}" y="${h-28}" text-anchor="middle" fill="${C.ink}" font-size="11">${esc(lab)}</text>`;sets.forEach((set,j)=>{const v=set.values[i]||0,hh=(h-p.t-p.b)*v/maxY,x=cx+(j-(sets.length-1)/2)*bw-bw*.38,y=h-p.b-hh;s+=`<rect x="${x}" y="${y}" width="${bw*.76}" height="${hh}" rx="4" fill="${set.color}"><title>${set.name} ${lab}：${fmt(v)}万元</title></rect>`;if(v>0&&(opt.labels!==false))s+=`<text x="${x+bw*.38}" y="${Math.max(y-6,12)}" text-anchor="middle" fill="${set.color}" font-size="10" font-weight="800">${fmt(v)}</text>`})});chartSvg(node,w,h,s)
     }
-    function renderYear(){verticalBars(document.querySelector('#yearChart'),['2021—23合计','2024','2025','2026 YTD'],[{name:'金额',values:[219.42466,589.7441,1159.382423,952.33061],color:C.teal}],{max:1200})}
-    function renderMonthBar(){verticalBars(document.querySelector('#monthBarChart'),months.slice(0,10),[
-      {name:'2024',values:monthly['2024'].slice(0,10),color:C.blue},{name:'2025',values:monthly['2025'].slice(0,10),color:C.gray},{name:'2026',values:monthly['2026'].slice(0,10),color:C.teal}],{max:400,labels:false})}
+    function renderYear(){verticalBars(document.querySelector('#yearChart'),['2025','2026 YTD'],[{name:'金额',values:[1159.382423,959.80151],color:C.teal}],{max:1200})}
+    function renderQingliang(){verticalBars(document.querySelector('#qingliangChart'),['6月','7月','8月'],[{name:'净利润',values:qingliangProfit,color:C.teal}],{max:6})}
+    function renderMonthBar(){verticalBars(document.querySelector('#monthBarChart'),months,[{name:'2025',values:monthly['2025'],color:C.gray},{name:'2026',values:monthly['2026'],color:C.teal}],{max:400,labels:false})}
     function cumulative(vals){let t=0;return vals.map(v=>v==null?null:(t+=v||0))}
     function renderCumulative(){
-      const node=document.querySelector('#cumulativeChart'),w=1260,h=350,p={l:58,r:28,t:28,b:45},maxY=1200,x=i=>p.l+i*(w-p.l-p.r)/11,y=v=>p.t+(maxY-v)*(h-p.t-p.b)/maxY;let s=axes(w,h,p,maxY,6);months.forEach((m,i)=>s+=`<text x="${x(i)}" y="${h-18}" text-anchor="middle" fill="${C.ink}" font-size="12">${m}</text>`);[['2024',C.blue],['2025',C.gray],['2026',C.teal]].forEach(([year,color])=>{const vals=cumulative(monthly[year]);s+=`<path d="${linePath(vals,x,y)}" fill="none" stroke="${color}" stroke-width="3" stroke-linecap="round"/>`;vals.forEach((v,i)=>{if(v==null)return;s+=`<circle cx="${x(i)}" cy="${y(v)}" r="3.5" fill="${color}"><title>${year}累计至${months[i]}：${fmt(v)}万元</title></circle>`});let last=vals.length-1;while(last>=0&&vals[last]==null)last--;s+=`<text x="${x(last)+8}" y="${y(vals[last])-8}" fill="${color}" font-size="12" font-weight="900">${fmt(vals[last])}</text>`});chartSvg(node,w,h,s)
+      const node=document.querySelector('#cumulativeChart'),w=1260,h=350,p={l:58,r:28,t:28,b:45},maxY=1200,x=i=>p.l+i*(w-p.l-p.r)/11,y=v=>p.t+(maxY-v)*(h-p.t-p.b)/maxY;let s=axes(w,h,p,maxY,6);months.forEach((m,i)=>s+=`<text x="${x(i)}" y="${h-18}" text-anchor="middle" fill="${C.ink}" font-size="12">${m}</text>`);[['2025',C.gray],['2026',C.teal]].forEach(([year,color])=>{const vals=cumulative(monthly[year]);s+=`<path d="${linePath(vals,x,y)}" fill="none" stroke="${color}" stroke-width="3" stroke-linecap="round"/>`;vals.forEach((v,i)=>{if(v==null)return;s+=`<circle cx="${x(i)}" cy="${y(v)}" r="3.5" fill="${color}"><title>${year}累计至${months[i]}：${fmt(v)}万元</title></circle>`});let last=vals.length-1;while(last>=0&&vals[last]==null)last--;s+=`<text x="${x(last)+8}" y="${y(vals[last])-8}" fill="${color}" font-size="12" font-weight="900">${fmt(vals[last])}</text>`});chartSvg(node,w,h,s)
     }
     function renderDelta(){
       const vals=monthly['2026'].slice(0,8).map((v,i)=>(v||0)-(monthly['2025'][i]||0)),node=document.querySelector('#deltaChart'),w=620,h=340,p={l:52,r:18,t:35,b:55},max=320,min=-320,x0=p.l,plot=h-p.t-p.b,y=v=>p.t+(max-v)*plot/(max-min),zero=y(0),group=(w-p.l-p.r)/vals.length;let s='';for(let i=0;i<=4;i++){const v=max-(max-min)*i/4,yy=y(v);s+=`<line x1="${p.l}" y1="${yy}" x2="${w-p.r}" y2="${yy}" stroke="${C.grid}"/><text x="${p.l-8}" y="${yy+4}" text-anchor="end" fill="${C.muted}" font-size="11">${fmt(v)}</text>`}s+=`<line x1="${p.l}" y1="${zero}" x2="${w-p.r}" y2="${zero}" stroke="#aab7c3"/>`;vals.forEach((v,i)=>{const cx=x0+group*(i+.5),yy=y(v),top=Math.min(yy,zero),hh=Math.abs(yy-zero),color=v>=0?C.teal:C.red;s+=`<rect x="${cx-19}" y="${top}" width="38" height="${Math.max(hh,1)}" rx="5" fill="${color}"><title>${months[i]}：${v>=0?'+':''}${fmt(v)}万元</title></rect><text x="${cx}" y="${v>=0?top-7:top+hh+15}" text-anchor="middle" fill="${color}" font-size="10" font-weight="800">${v>=0?'+':''}${fmt(v)}</text><text x="${cx}" y="${h-24}" text-anchor="middle" fill="${C.ink}" font-size="11">${months[i]}</text>`});chartSvg(node,w,h,s)
     }
-    function renderYtd(){verticalBars(document.querySelector('#ytdChart'),['2025年1—7月','2026年1—7月'],[{name:'可比金额',values:[1159.382423,885.53421],color:C.teal}],{max:1200})}
-    function horizontalBars(node,data){
-      const rows=data.length,w=1240,h=Math.max(330,rows*48+65),p={l:160,r:55,t:25,b:40},max=niceMax(Math.max(...data.flatMap(r=>r.slice(1)))),plotW=w-p.l-p.r,rowH=(h-p.t-p.b)/rows,colors=[C.blue,C.gray,C.teal];let s='';for(let i=0;i<=5;i++){const xx=p.l+plotW*i/5,val=max*i/5;s+=`<line x1="${xx}" y1="${p.t}" x2="${xx}" y2="${h-p.b}" stroke="${C.grid}"/><text x="${xx}" y="${h-14}" text-anchor="middle" fill="${C.muted}" font-size="11">${fmt(val)}</text>`}data.forEach((r,i)=>{const cy=p.t+rowH*(i+.5),barH=Math.min(10,rowH/4);s+=`<text x="${p.l-12}" y="${cy+4}" text-anchor="end" fill="${C.ink}" font-size="12" font-weight="700">${esc(r[0])}</text>`;r.slice(1).forEach((v,j)=>{if(!v)return;const yy=cy+(j-1)*barH*1.25-barH/2,ww=plotW*v/max;s+=`<rect x="${p.l}" y="${yy}" width="${ww}" height="${barH}" rx="4" fill="${colors[j]}"><title>${r[0]} ${2024+j}：${fmt(v)}万元</title></rect><text x="${p.l+ww+7}" y="${yy+barH-1}" fill="${colors[j]}" font-size="10" font-weight="800">${fmt(v)}</text>`})});s+=`<g transform="translate(${p.l},8)">${['2024','2025','2026'].map((n,i)=>`<rect x="${i*74}" y="0" width="16" height="7" rx="3" fill="${colors[i]}"/><text x="${i*74+22}" y="8" fill="${C.muted}" font-size="11">${n}</text>`).join('')}</g>`;chartSvg(node,w,h,s)
-    }
-    function renderDonut(){
-      const node=document.querySelector('#shareChart'),vals=category.map(r=>[r[0],r[3]]).filter(r=>r[1]>0),total=vals.reduce((a,r)=>a+r[1],0),colors=[C.teal,C.blue,C.orange,C.gray],w=620,h=340,cx=310,cy=165,r=105,sw=38,circ=2*Math.PI*r;let offset=0,s='';vals.forEach((v,i)=>{const f=v[1]/total,len=f*circ,color=colors[i%colors.length];s+=`<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${color}" stroke-width="${sw}" stroke-dasharray="${len} ${circ-len}" stroke-dashoffset="${-offset}" transform="rotate(-90 ${cx} ${cy})"><title>${v[0]}：${fmt(v[1])}万元，${(f*100).toFixed(1)}%</title></circle>`;offset+=len});s+=`<text x="${cx}" y="${cy-4}" text-anchor="middle" fill="${C.muted}" font-size="12">2026累计</text><text x="${cx}" y="${cy+24}" text-anchor="middle" fill="${C.ink}" font-size="25" font-weight="900">${fmt(total)}</text>`;chartSvg(node,w,h,s)
-    }
     function renderHeat(){const node=document.querySelector('#heatmap'),all=Object.values(monthly).flat().filter(v=>v!=null),max=Math.max(...all);node.innerHTML='<div class="cell head"></div>'+months.map(m=>`<div class="cell head">${m}</div>`).join('')+Object.entries(monthly).map(([year,vals])=>`<div class="cell year">${year}年</div>`+vals.map(v=>{const n=v||0,a=n?(.12+.78*n/max):.04;return `<div class="cell" style="background:rgba(14,181,170,${a});color:${a>.55?'#fff':'#35506a'}" title="${year} ${fmt(v||0)}万元">${n?fmt(n):'—'}</div>`}).join('')).join('')}
-    function renderAll(){renderTrend();renderYear();renderMonthBar();renderCumulative();renderDelta();renderHeat()}
+    function renderAll(){renderTrend();renderYear();renderQingliang();renderMonthBar();renderCumulative();renderDelta();renderHeat()}
     document.querySelectorAll('[data-series]').forEach(b=>b.addEventListener('click',()=>{b.classList.toggle('active');renderTrend()}));
     renderAll();
   </script>
