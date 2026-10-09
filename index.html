@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="拓展部2025—2026年业务数据对比、月度趋势与青靓业务净利润看板" />
+  <meta name="description" content="拓展部2025—2026年业务数据对比、月度趋势与青靓业务营业额看板" />
   <title>拓展部业务数据对比看板</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230bb3a7'/%3E%3Cpath d='M14 45V30h8v15zm14 0V19h8v26zm14 0V11h8v34z' fill='white'/%3E%3C/svg%3E" />
   <style>
@@ -77,19 +77,19 @@
     </header>
 
     <nav class="nav" aria-label="图表导航">
-      <a href="#trend">月度趋势</a><a href="#year">年度对比</a><a href="#qingliang">青靓利润</a><a href="#monthbar">月份柱状</a><a href="#cumulative">累计趋势</a><a href="#delta">月度增减</a><a href="#target">目标进度</a><a href="#heat">业务热力</a>
+      <a href="#trend">月度趋势</a><a href="#year">年度对比</a><a href="#qingliang">青靓营业额</a><a href="#monthbar">月份柱状</a><a href="#cumulative">累计趋势</a><a href="#delta">月度增减</a><a href="#target">目标进度</a><a href="#heat">业务热力</a>
     </nav>
 
     <section class="kpis" aria-label="核心指标">
-      <article class="kpi" style="--wash:#eef2f7"><div class="label">2025 年度金额</div><div class="value">1,159.4<span class="unit">万元</span></div><div class="note">全年结算金额</div></article>
-      <article class="kpi" style="--wash:#dff8f4"><div class="label">2026 年度累计</div><div class="value">959.8<span class="unit">万元</span></div><div class="note">截至8月，已含青靓业务</div></article>
+      <article class="kpi" style="--wash:#eef2f7"><div class="label">2025 年度营业额</div><div class="value">1,159.4<span class="unit">万元</span></div><div class="note">全年结算金额</div></article>
+      <article class="kpi" style="--wash:#dff8f4"><div class="label">2026 年度累计营业额</div><div class="value">959.8<span class="unit">万元</span></div><div class="note">截至8月，已含青靓业务</div></article>
       <article class="kpi" style="--wash:#eaf2ff"><div class="label">2026 / 2025</div><div class="value">82.8<span class="unit">%</span></div><div class="note">当前累计占2025全年</div></article>
-      <article class="kpi" style="--wash:#e6f8f6"><div class="label">青靓业务净利润</div><div class="value">7.47<span class="unit">万元</span></div><div class="note">6—8月，共1,562套</div></article>
+      <article class="kpi" style="--wash:#e6f8f6"><div class="label">青靓业务营业额</div><div class="value">7.47<span class="unit">万元</span></div><div class="note">6—8月，共1,562套</div></article>
     </section>
 
     <section class="grid" id="dashboard">
       <article class="card wide" id="trend" data-chart-card>
-        <div class="card-head"><div><h2>2025 / 2026 月度金额趋势</h2><p class="desc">2026年6—8月已计入青靓业务净利润。</p></div></div>
+        <div class="card-head"><div><h2>2025 / 2026 月度金额趋势</h2><p class="desc">2026年6—8月已计入青靓业务营业额。</p></div></div>
         <div class="pills"><button class="pill active" data-series="2025">2025</button><button class="pill active" data-series="2026">2026</button></div>
         <div class="chart" id="trendChart"></div>
         <div class="legend"><span><i class="dot" style="--c:#9aa4b2"></i>2025</span><span><i class="dot" style="--c:#0eb5aa"></i>2026 YTD</span></div>
@@ -102,9 +102,9 @@
       </article>
 
       <article class="card" id="qingliang" data-chart-card>
-        <div class="card-head"><div><h2>青靓业务净利润</h2><p class="desc">标价－每套50元－表内服务费。</p></div></div>
+        <div class="card-head"><div><h2>青靓业务营业额</h2><p class="desc">营业额</p></div></div>
         <div class="chart" id="qingliangChart"></div>
-        <div class="insight"><span class="mark"></span><span>6月 <b>1,125套</b>｜7月 <b>223套</b>｜8月 <b>214套</b>；净利润合计 <b>7.47万元</b>。</span></div>
+        <div class="insight"><span class="mark"></span><span>6月 <b>1,125套</b>｜7月 <b>223套</b>｜8月 <b>214套</b>；营业额合计 <b>7.47万元</b>。</span></div>
       </article>
 
       <article class="card wide" id="monthbar" data-chart-card>
@@ -167,7 +167,7 @@
       labels.forEach((lab,i)=>{const cx=p.l+group*(i+.5);s+=`<text x="${cx}" y="${h-28}" text-anchor="middle" fill="${C.ink}" font-size="11">${esc(lab)}</text>`;sets.forEach((set,j)=>{const v=set.values[i]||0,hh=(h-p.t-p.b)*v/maxY,x=cx+(j-(sets.length-1)/2)*bw-bw*.38,y=h-p.b-hh;s+=`<rect x="${x}" y="${y}" width="${bw*.76}" height="${hh}" rx="4" fill="${set.color}"><title>${set.name} ${lab}：${fmt(v)}万元</title></rect>`;if(v>0&&(opt.labels!==false))s+=`<text x="${x+bw*.38}" y="${Math.max(y-6,12)}" text-anchor="middle" fill="${set.color}" font-size="10" font-weight="800">${fmt(v)}</text>`})});chartSvg(node,w,h,s)
     }
     function renderYear(){verticalBars(document.querySelector('#yearChart'),['2025','2026 YTD'],[{name:'金额',values:[1159.382423,959.80151],color:C.teal}],{max:1200})}
-    function renderQingliang(){verticalBars(document.querySelector('#qingliangChart'),['6月','7月','8月'],[{name:'净利润',values:qingliangProfit,color:C.teal}],{max:6})}
+    function renderQingliang(){verticalBars(document.querySelector('#qingliangChart'),['6月','7月','8月'],[{name:'营业额',values:qingliangProfit,color:C.teal}],{max:6})}
     function renderMonthBar(){verticalBars(document.querySelector('#monthBarChart'),months,[{name:'2025',values:monthly['2025'],color:C.gray},{name:'2026',values:monthly['2026'],color:C.teal}],{max:400,labels:false})}
     function cumulative(vals){let t=0;return vals.map(v=>v==null?null:(t+=v||0))}
     function renderCumulative(){
